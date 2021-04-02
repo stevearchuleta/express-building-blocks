@@ -1,0 +1,22 @@
+{
+  "name": "express_building_blocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevearchuleta/express-building-blocks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevearchuleta/express-building-blocks/issues"
+  },
+  "homepage": "https://github.com/stevearchuleta/express-building-blocks#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
