@@ -13,33 +13,41 @@ const app = express();
 // __proto__: http.ServerResponse.prototype   <-- INHERITED BY EXPRESS RESPONSE
 // INHERITANCE GIVES ME THE ABILITY TO CALL NODE FUNCTIONS FROM EXPRESS APPS
 //===========
-app.get('/', function(request, response) {
-    response.send('Hello World');
+//app.get('/', function(request, response) {
+    // response.send('Building Blocks with Express.js');
     // SAME THING
-    response.write('HELLO WORLD');
-    response.end();
+    //response.write('Building Blocks with Express.js');
+    //response.end();
+//});
+
+//===========
+// RATHER THAN USE THE ABOVE CODE...
+// SERVE THE INDEX.HTML FILE VIA the PUBLIC FOLDER USING SENDFILE() METHOD
+//===========
+app.get('/', function(request, response) {
+    response.sendFile(__dirname + '/public/index.html');
 });
 
 //===========
 // WHEN WRITING WEB APIs IN EXPRESS, I WILL BE DEALING WITH DATA STRUCTURES LIKE OBJECTS AND ARRAYS
 // THESE OBJECTS AND/OR ARRAYS WILL NEED TO BE SERIALIZED INTO JSON (pass array to the send() function)
 //===========
-/*
+
 app.get('/blocks', function(request, response){
     let blocks = ['Fixed', 'Movable', 'Rotating'];
     //response.send(blocks);
-    // SAME THING
-    response.json(BLOCKS);
+    // SAME THING USING .json method
+    response.json(blocks);
 });
-*/
+
 
 //===========
 // EXAMPLE OF PASSING A STRING INTO THE SEND FUNCTION
 //===========
-app.get('/string', function(request, response){
-    var string = '<ul><li>Fixed</li><li>Movable</li></ul>';
-    response.send(string);
-});
+// app.get('/string', function(request, response){
+//     var string = '<ul><li>Fixed</li><li>Movable</li></ul>';
+//     response.send(string);
+// });
 
 
 //===========
