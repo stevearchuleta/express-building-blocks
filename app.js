@@ -13,6 +13,9 @@ const app = express();
 // __proto__: http.ServerResponse.prototype   <-- INHERITED BY EXPRESS RESPONSE
 // INHERITANCE GIVES ME THE ABILITY TO CALL NODE FUNCTIONS FROM EXPRESS APPS
 //===========
+//===========
+// #1
+//===========
 //app.get('/', function(request, response) {
     // response.send('Building Blocks with Express.js');
     // SAME THING
@@ -20,13 +23,29 @@ const app = express();
     //response.end();
 //});
 
+
 //===========
 // RATHER THAN USE THE ABOVE CODE...
 // SERVE THE INDEX.HTML FILE VIA the PUBLIC FOLDER USING SENDFILE() METHOD
 //===========
-app.get('/', function(request, response) {
-    response.sendFile(__dirname + '/public/index.html');
-});
+//===========
+// #2
+//===========
+// app.get('/', function(request, response) {
+//     response.sendFile(__dirname + '/public/index.html');
+// });
+
+
+//===========
+// EXPRESS STATIC MIDDLEWARE TO SERVE ALL STATIC FILES FROM THE PUBLIC FOLDER
+// THE RETURN VALUE FROM THE EXPRESS.STATIC() CALL IS PASSED TO THE APP.USE() FUNCTION. 
+//===========
+//===========
+// #3
+//===========
+app.use(express.static('./public'));
+
+
 
 //===========
 // WHEN WRITING WEB APIs IN EXPRESS, I WILL BE DEALING WITH DATA STRUCTURES LIKE OBJECTS AND ARRAYS
@@ -56,9 +75,9 @@ app.get('/blocks', function(request, response){
 // THIS /blocks PATH WILL ("forever") BE REDIRECTED TO /parts
 // CAN ALSO INCLUDE AN OPTIONAL 301 STATUS CODE AS THE FIRST ARGUMENT TO REDIRECT ("MOVED PERMANENTLY")
 //===========
-app.get('/blocks', function(request, response){
-    response.redirect(301, '/parts')
-});
+// app.get('/blocks', function(request, response){
+//     response.redirect(301, '/parts')
+// });
 
 app.listen(3001, function(){
     console.log('🌍 Listening on port 3001');
