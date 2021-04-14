@@ -1,0 +1,14 @@
+body{
+    background-image: url('./bg-stars.png');
+}
+
+h1{
+    background-color: white;
+    width: fit-content;
+}
+.block-list {
+    height: 100px;
+    width: 800px;
+    background-color: white;
+    border: 2px solid green;
+}

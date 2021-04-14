@@ -43,13 +43,14 @@ const app = express();
 //===========
 // #3
 //===========
-app.use(express.static('./public'));
+app.use(express.static('public'));
 
 
 
 //===========
 // WHEN WRITING WEB APIs IN EXPRESS, I WILL BE DEALING WITH DATA STRUCTURES LIKE OBJECTS AND ARRAYS
 // THESE OBJECTS AND/OR ARRAYS WILL NEED TO BE SERIALIZED INTO JSON (pass array to the send() function)
+// SERIALIZED INTO JSON and SENT BACK TO THE CLIENT
 //===========
 
 app.get('/blocks', function(request, response){

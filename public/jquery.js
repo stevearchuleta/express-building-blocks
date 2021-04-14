@@ -1,0 +1,1 @@
+// jQuery manipulates the DOM and simplify AJAX calls
